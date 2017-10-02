@@ -1,0 +1,69 @@
+.add-workout .add-workout__header-dropdowns .add-workout__header-dropdown .add-workout__header-dropdown-top {
+  cursor: pointer;
+  padding: 7px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #b9d1dd;
+  box-shadow: 1px 1px 4px 1px #d7e5ec; }
+.add-workout .add-workout__header-dropdowns .add-workout__header-dropdown .add-workout__header-dropdown--text {
+  font-weight: bold;
+  font-size: 1.1rem; }
+.add-workout .add-workout__header-dropdowns .add-workout__header-dropdown .add-workout__header-dropdown-list {
+  padding: 0;
+  list-style: none; }
+  .add-workout .add-workout__header-dropdowns .add-workout__header-dropdown .add-workout__header-dropdown-list .add-workout__header-dropdown-list-item {
+    border-top: 2px solid lightgray;
+    padding: 15px;
+    font-weight: bold;
+    cursor: pointer; }
+    .add-workout .add-workout__header-dropdowns .add-workout__header-dropdown .add-workout__header-dropdown-list .add-workout__header-dropdown-list-item:hover {
+      background: #569ce0; }
+.add-workout .add-workout__progress {
+  position: relative;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  max-width: 320px;
+  margin: auto; }
+  .add-workout .add-workout__progress:before {
+    content: "";
+    position: absolute;
+    top: 17px;
+    width: 100%;
+    height: 4px;
+    background: #58aadf; }
+  .add-workout .add-workout__progress .add-workout__progress-number {
+    position: relative;
+    background: #58aadf;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 4px;
+    color: #ebebeb;
+    cursor: pointer; }
+.add-workout .add-workout__log {
+  margin: 15px 0;
+  padding: 10px;
+  border-radius: 4px;
+  background: #b9d1dd;
+  font-weight: bold; }
+  .add-workout .add-workout__log .add-workout__log-header {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-column-gap: 7px;
+    border-bottom: 2px solid black; }
+  .add-workout .add-workout__log .add-workout__log-body .add-workout__log-weight-set {
+    display: grid;
+    grid-template-columns: 40px 1fr 1fr;
+    grid-column-gap: 7px;
+    justify-content: center;
+    text-align: center; }
+    .add-workout .add-workout__log .add-workout__log-body .add-workout__log-weight-set .set_number p:first-child {
+      visibility: hidden; }
+
+/*# sourceMappingURL=add-workout.component.css.map */

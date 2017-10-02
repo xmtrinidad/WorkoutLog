@@ -1,0 +1,44 @@
+@import "../../variables";
+
+.add-post {
+  max-width: 545px;
+}
+
+.categories-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+
+  .categories-list__item {
+    padding: 8px;
+    border-radius: 5px;
+    background: $categoryHighlight;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 768px) {
+  .form {
+    display: grid;
+    grid-template-areas:
+      "title date"
+      "desc desc"
+      "btn btn";
+    grid-gap: 10px;
+  }
+
+  .form__post-title {
+    grid-area: title;
+  }
+  .form__post-date {
+    grid-area: date;
+  }
+  .form__post-desc {
+    grid-area: desc;
+  }
+  .form__post-btn {
+    grid-area: btn
+  }
+
+}

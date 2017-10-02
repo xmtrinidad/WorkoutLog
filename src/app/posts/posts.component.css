@@ -1,0 +1,37 @@
+.post {
+  padding: 8px;
+  cursor: pointer; }
+  .post .post__title {
+    margin: 10px 0; }
+  .post .post__categories {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    justify-content: space-between;
+    width: 250px; }
+  .post:nth-child(even) {
+    background: #b9d1dd; }
+
+@media (min-width: 768px) {
+  .posts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px; }
+
+  .post:nth-child(even) {
+    background: #fff; }
+
+  .post:nth-child(4n+2), .post:nth-child(4n+3) {
+    background: #b9d1dd; } }
+@media (min-width: 1200px) {
+  .posts {
+    grid-template-columns: 1fr 1fr 1fr; }
+
+  .post:nth-child(odd) {
+    background: #fff; }
+
+  .post:nth-child(even) {
+    background: #b9d1dd; } }
+
+/*# sourceMappingURL=posts.component.css.map */

@@ -1,0 +1,26 @@
+.post__info {
+  max-width: 768px;
+  margin: auto; }
+  .post__info .post__categories {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    justify-content: space-between;
+    width: 250px; }
+
+.post-info__exercise {
+  margin: 10px 0; }
+  .post-info__exercise .post-info__exercise-body {
+    margin: auto; }
+
+@media (min-width: 768px) {
+  .post__workout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px; } }
+@media (min-width: 1200px) {
+  .post__workout {
+    grid-template-columns: 1fr 1fr 1fr; } }
+
+/*# sourceMappingURL=post.component.css.map */

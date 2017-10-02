@@ -1,0 +1,16 @@
+.nav {
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  background: #4278a9;
+  color: #ebebeb; }
+  .nav .nav__bars {
+    padding: 5px;
+    cursor: pointer; }
+  .nav .nav__title {
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    text-align: center; }
+
+/*# sourceMappingURL=app.component.css.map */
