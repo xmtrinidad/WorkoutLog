@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+  menuState = 'closed';
+  toggleMenu() {
+    this.menuState = this.menuState === 'closed' ? 'open' : 'closed';
+  }
 }

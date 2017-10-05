@@ -1,11 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { AddPostComponent } from './add-post/add-post.component';
 import { PostsComponent } from './posts/posts.component';
 import { AddWorkoutComponent } from './add-workout/add-workout.component';
 import { PostComponent } from './post/post.component';
+import { NavComponent } from './nav/nav.component';
+
+import {PostService} from './post.service';
 
 @NgModule({
   declarations: [
@@ -13,12 +18,15 @@ import { PostComponent } from './post/post.component';
     AddPostComponent,
     PostsComponent,
     AddWorkoutComponent,
-    PostComponent
+    PostComponent,
+    NavComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

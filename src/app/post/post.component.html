@@ -1,292 +1,61 @@
-<div class="container post">
+<div *ngIf="post" class="container">
+  <!-- Post Info -->
+  <div class="post">
+    <div class="post__info">
+      <h2 class="post__info-title text-center">{{post.title}}</h2>
+      <p class="post__info-desc">{{post.desc}}</p>
+      <ul class="post__categories">
+        <li *ngFor="let category of post.categories" class="post__category">
+          <!-- EZ Curl Bar icon by Icons8 -->
+          <img src="{{category}}" title="EZ Curl Bar" width="50" height="50">
+        </li>
+      </ul>
+    </div>
 
-  <div class="post__info">
-    <h2 class="post__info-title text-center">My Post Title</h2>
-    <p class="post__info-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem corporis, impedit incidunt magnam optio provident quaerat sint suscipit ullam veritatis. Delectus fugit in inventore, iste odit rem repellat tempore! Alias aliquam dolor eos est exercitationem explicabo facilis molestias nemo nostrum praesentium provident quaerat repellat, similique?</p>
-    <ul class="post__categories">
-      <li class="post__category">
-        <!-- EZ Curl Bar icon by Icons8 -->
-        <img src="https://png.icons8.com/ez-curl-bar/ios7/50" title="EZ Curl Bar" width="50" height="50">
-      </li>
-      <li class="post__category">
-        <!-- Exercise icon by Icons8 -->
-        <img src="https://png.icons8.com/exercise/ios7/50" title="Exercise" width="50" height="50">
-      </li>
-      <li class="post__category">
-        <!-- Spinning icon by Icons8 -->
-        <img src="https://png.icons8.com/spinning/ios7/50" title="Spinning" width="50" height="50">
-      </li>
-    </ul>
+    <!-- Tables Container -->
+    <div class="post__workout my-4">
+
+      <!-- Exercise -->
+      <div *ngFor="let exercise of post.exercises" class="post-info__exercise">
+
+        <table class="table post-info__exercise-top">
+          <thead class="thead-inverse">
+          <tr>
+            <th>Exercise</th>
+            <th>Sets</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>{{exercise.exercise}}</td>
+            <td>{{exercise.numberOfSets}}</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table  class="table post-info__exercise-body">
+          <thead class="thead-default">
+          <tr>
+            <th>Set</th>
+            <th>Weight</th>
+            <th>Reps</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let set of exercise.sets">
+            <th scope="row">{{set.setNumber}}</th>
+            <td>{{set.weight}}</td>
+            <td>{{set.reps}}</td>
+          </tr>
+          </tbody>
+        </table>
+
+      </div>
+      <!-- /Exercise -->
+
+    </div>
+    <!-- /Tables Container -->
+
   </div>
-
-
-  <div class="post__workout my-4">
-    <div class="post-info__exercise">
-      <table class="table post-info__exercise-top">
-        <thead class="thead-inverse">
-        <tr>
-          <th>Exercise</th>
-          <th>Sets</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <td>Bench Press</td>
-          <td>4</td>
-        </tr>
-        </tbody>
-      </table>
-
-      <table class="table post-info__exercise-body">
-        <thead class="thead-default">
-        <tr>
-          <th>Set</th>
-          <th>Weight</th>
-          <th>Reps</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>135</td>
-          <td>10</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>135</td>
-          <td>10</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>135</td>
-          <td>10</td>
-        </tr>
-        <tr>
-          <th scope="row">4</th>
-          <td>135</td>
-          <td>10</td>
-        </tr>
-        <tr>
-          <th scope="row">5</th>
-          <td>135</td>
-          <td>10</td>
-        </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="post-info__exercise">
-      <table class="table post-info__exercise-top">
-        <thead class="thead-inverse">
-        <tr>
-          <th>Exercise</th>
-          <th>Sets</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <td>Bench Press</td>
-          <td>4</td>
-        </tr>
-        </tbody>
-      </table>
-
-      <table class="table post-info__exercise-body">
-        <thead class="thead-default">
-        <tr>
-          <th>Set</th>
-          <th>Weight</th>
-          <th>Reps</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>135</td>
-          <td>10</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>135</td>
-          <td>10</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>135</td>
-          <td>10</td>
-        </tr>
-        <tr>
-          <th scope="row">4</th>
-          <td>135</td>
-          <td>10</td>
-        </tr>
-        <tr>
-          <th scope="row">5</th>
-          <td>135</td>
-          <td>10</td>
-        </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="post-info__exercise">
-      <table class="table post-info__exercise-top">
-        <thead class="thead-inverse">
-        <tr>
-          <th>Exercise</th>
-          <th>Sets</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <td>Bench Press</td>
-          <td>4</td>
-        </tr>
-        </tbody>
-      </table>
-
-      <table class="table post-info__exercise-body">
-        <thead class="thead-default">
-        <tr>
-          <th>Set</th>
-          <th>Weight</th>
-          <th>Reps</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>135</td>
-          <td>10</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>135</td>
-          <td>10</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>135</td>
-          <td>10</td>
-        </tr>
-        <tr>
-          <th scope="row">4</th>
-          <td>135</td>
-          <td>10</td>
-        </tr>
-        <tr>
-          <th scope="row">5</th>
-          <td>135</td>
-          <td>10</td>
-        </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="post-info__exercise">
-      <table class="table post-info__exercise-top">
-        <thead class="thead-inverse">
-        <tr>
-          <th>Exercise</th>
-          <th>Sets</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <td>Bench Press</td>
-          <td>4</td>
-        </tr>
-        </tbody>
-      </table>
-
-      <table class="table post-info__exercise-body">
-        <thead class="thead-default">
-        <tr>
-          <th>Set</th>
-          <th>Weight</th>
-          <th>Reps</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>135</td>
-          <td>10</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>135</td>
-          <td>10</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>135</td>
-          <td>10</td>
-        </tr>
-        <tr>
-          <th scope="row">4</th>
-          <td>135</td>
-          <td>10</td>
-        </tr>
-        <tr>
-          <th scope="row">5</th>
-          <td>135</td>
-          <td>10</td>
-        </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="post-info__exercise">
-      <table class="table post-info__exercise-top">
-        <thead class="thead-inverse">
-        <tr>
-          <th>Exercise</th>
-          <th>Sets</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <td>Bench Press</td>
-          <td>4</td>
-        </tr>
-        </tbody>
-      </table>
-
-      <table class="table post-info__exercise-body">
-        <thead class="thead-default">
-        <tr>
-          <th>Set</th>
-          <th>Weight</th>
-          <th>Reps</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>135</td>
-          <td>10</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>135</td>
-          <td>10</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>135</td>
-          <td>10</td>
-        </tr>
-        <tr>
-          <th scope="row">4</th>
-          <td>135</td>
-          <td>10</td>
-        </tr>
-        <tr>
-          <th scope="row">5</th>
-          <td>135</td>
-          <td>10</td>
-        </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
 
 </div>

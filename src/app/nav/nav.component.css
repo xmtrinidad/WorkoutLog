@@ -1,0 +1,28 @@
+.nav-menu {
+  background: #fff;
+  box-shadow: 2px 1px 5px 0px rgba(123, 123, 123, 0.35);
+  position: absolute;
+  top: 0;
+  width: 320px;
+  height: 100%;
+  z-index: 3; }
+  .nav-menu .nav-menu__title {
+    text-align: center;
+    padding: 10px 0; }
+  .nav-menu .nav-menu__list {
+    padding: 0;
+    list-style: none;
+    font-weight: bold;
+    font-size: 1.7rem; }
+    .nav-menu .nav-menu__list .nav-menu__list-item {
+      cursor: pointer; }
+      .nav-menu .nav-menu__list .nav-menu__list-item .nav-menu__list-item--link {
+        display: block;
+        color: inherit;
+        padding: 15px;
+        text-decoration: none; }
+        .nav-menu .nav-menu__list .nav-menu__list-item .nav-menu__list-item--link:hover, .nav-menu .nav-menu__list .nav-menu__list-item .nav-menu__list-item--link:active {
+          background: #4278a9;
+          color: #ebebeb; }
+
+/*# sourceMappingURL=nav.component.css.map */

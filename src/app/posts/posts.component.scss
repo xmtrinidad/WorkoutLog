@@ -13,8 +13,9 @@
     list-style: none;
     padding: 0;
     margin: 10px 0;
-    justify-content: space-between;
-    width: 250px;
+    .post__category:not(:first-child) {
+      margin-left: 20px;
+    }
   }
   &:nth-child(even) {
     background: #b9d1dd;

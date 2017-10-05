@@ -1,0 +1,34 @@
+@import "../../variables";
+
+.nav-menu {
+  background: #fff;
+  box-shadow: 2px 1px 5px 0px rgba(123, 123, 123, 0.35);
+  position: absolute;
+  top: 0;
+  width: 320px;
+  height: 100%;
+  z-index: 3;
+  .nav-menu__title {
+    text-align: center;
+    padding: 10px 0;
+  }
+  .nav-menu__list {
+    padding: 0;
+    list-style: none;
+    font-weight: bold;
+    font-size: 1.7rem;
+    .nav-menu__list-item {
+      cursor: pointer;
+      .nav-menu__list-item--link {
+        display: block;
+        color: inherit;
+        padding: 15px;
+        text-decoration: none;
+        &:hover, &:active {
+          background: $nav;
+          color: $navColor;
+        }
+      }
+    }
+  }
+}
