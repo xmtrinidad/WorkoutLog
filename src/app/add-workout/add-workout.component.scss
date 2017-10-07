@@ -22,6 +22,7 @@
       .add-workout__header-dropdown-list {
         padding: 0;
         list-style: none;
+        overflow: hidden;
         .add-workout__header-dropdown-list-item {
           border-top: 2px solid lightgray;
           padding: 15px;

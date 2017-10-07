@@ -1,8 +1,21 @@
 import { Post } from './post';
+import { Category } from './post';
 
-const weights = 'https://png.icons8.com/ez-curl-bar/ios7/50';
-const run = 'https://png.icons8.com/exercise/ios7/50';
-const bike = 'https://png.icons8.com/spinning/ios7/50';
+const arms = 'https://png.icons8.com/muscle/ios7/65';
+const back = 'https://png.icons8.com/pullups/ios7/65';
+const chest = 'https://png.icons8.com/bench-press/ios7/65';
+const shoulders = 'https://png.icons8.com/shoulders/ios7/50';
+const legs = 'https://png.icons8.com/squats/ios7/50';
+const abs = 'https://png.icons8.com/pilates/ios7/50';
+
+export const CATEGORIES: Category[] = [
+  { muscle: 'Arms', src: arms, selected: false },
+  { muscle: 'Back', src: back, selected: false },
+  { muscle: 'Chest', src: chest, selected: false },
+  { muscle: 'Shoulders', src: shoulders, selected: false },
+  { muscle: 'Legs', src: legs, selected: false },
+  { muscle: 'Abs', src: abs, selected: false }
+];
 
  export const POSTS: Post[] = [
   {
@@ -11,7 +24,7 @@ const bike = 'https://png.icons8.com/spinning/ios7/50';
     desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' +
     'Maecenas ac metus vitae leo fringilla finibus quis id nunc. ' +
     'Nulla sit amet sapien vitae',
-    categories: [weights, run, bike],
+    categories: [chest, back],
     exercises: [
       {
         exercise: 'Machine Fly',
@@ -160,7 +173,7 @@ const bike = 'https://png.icons8.com/spinning/ios7/50';
      title: 'Day 2 workout Example',
      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' +
      'Maecenas ac metus vitae leo ',
-     categories: [run],
+     categories: [legs],
      exercises: [
        {
          exercise: 'Treadmill',
@@ -191,7 +204,7 @@ const bike = 'https://png.icons8.com/spinning/ios7/50';
      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' +
      'Maecenas ac metus vitae leo fringilla finibus quis id nunc. ' +
      'Nulla sit amet sapien vitae odio dapibus aliquet',
-     categories: [weights, bike],
+     categories: [arms, shoulders],
      exercises: [
        {
          exercise: 'Squats',

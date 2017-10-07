@@ -7,15 +7,23 @@
 .categories-list {
   list-style: none;
   padding: 0;
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 8px;
 
   .categories-list__item {
-    padding: 8px;
+    padding: 7px;
     border-radius: 5px;
-    background: $categoryHighlight;
     cursor: pointer;
+    transition: all .2s;
   }
+  .category-list__item--selected {
+    background: $categoryHighlight;
+  }
+}
+
+.form-control:focus {
+  background: #fffcd0;
 }
 
 @media (min-width: 768px) {

@@ -5,3 +5,9 @@ export class Post {
   categories: string[];
   exercises: any[];
 }
+
+export class Category {
+  muscle: string;
+  src: string;
+  selected: boolean;
+}

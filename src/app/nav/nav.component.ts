@@ -1,5 +1,6 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { Location} from '@angular/common';
 
 @Component({
   selector: 'app-nav',
@@ -21,12 +22,16 @@ export class NavComponent implements OnInit {
   @Input() menuState: string;
   @Output() emitClosed = new EventEmitter();
 
-  constructor() { }
+  constructor(private location: Location) { }
 
   ngOnInit() {
   }
 
   closeMenu() {
     this.emitClosed.emit('closed');
+  }
+
+  goBack() {
+    this.location.back();
   }
 }

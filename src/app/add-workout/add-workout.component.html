@@ -8,40 +8,37 @@
     <div class="add-workout__header-dropdowns">
       <!-- Dropdown -->
       <div class="add-workout__header-dropdown my-3">
-        <div class="add-workout__header-dropdown-top">
-        <span class="add-workout__header-dropdown--text">Choose Muscle Group</span>
+
+        <div (click)="toggleState($event)" class="add-workout__header-dropdown-top">
+          <span class="add-workout__header-dropdown--text">{{muscleDropdownText}}</span>
           <div>
             <!-- Muscle icon by Icons8 -->
             <img class="add-workout__header-dropdown--icon" src="https://png.icons8.com/muscle/ios7/45" title="Muscle" width="45" height="45">
           </div>
         </div>
-        <!--<ul class="add-workout__header-dropdown-list">-->
-          <!--<li class="add-workout__header-dropdown-list-item">Shoulders</li>-->
-          <!--<li class="add-workout__header-dropdown-list-item">Back</li>-->
-          <!--<li class="add-workout__header-dropdown-list-item">Abs</li>-->
-          <!--<li class="add-workout__header-dropdown-list-item">Legs</li>-->
-          <!--<li class="add-workout__header-dropdown-list-item">Chest</li>-->
-          <!--<li class="add-workout__header-dropdown-list-item">Arms</li>-->
-        <!--</ul>-->
+        <!-- dropdown list -->
+        <ul [@dropdownState]="muscleGroupDropdown" class="add-workout__header-dropdown-list">
+          <li (click)="chooseItem($event)" *ngFor="let category of categories"
+              class="add-workout__header-dropdown-list-item">{{category.muscle}}</li>
+        </ul>
+        <!-- dropdown list -->
       </div>
-      <!-- /Dropdown -->
+
 
       <!-- Dropdown -->
       <div class="add-workout__header-dropdown">
-        <div class="add-workout__header-dropdown-top">
-          <span class="add-workout__header-dropdown--text">Number of Exercises</span>
+        <div (click)="toggleState($event)" class="add-workout__header-dropdown-top">
+          <span class="add-workout__header-dropdown--text">{{exercisesDropdownText}}</span>
           <div>
             <!-- List icon by Icons8 -->
             <img src="https://png.icons8.com/list/win8/45" title="List" width="45" height="45">
           </div>
         </div>
-        <!--<ul class="add-workout__header-dropdown-list">-->
-          <!--<li class="add-workout__header-dropdown-list-item">1</li>-->
-          <!--<li class="add-workout__header-dropdown-list-item">2</li>-->
-          <!--<li class="add-workout__header-dropdown-list-item">3</li>-->
-          <!--<li class="add-workout__header-dropdown-list-item">4</li>-->
-          <!--<li class="add-workout__header-dropdown-list-item">5</li>-->
-        <!--</ul>-->
+        <ul [@dropdownState]="setsDropdown" class="add-workout__header-dropdown-list">
+          <li (click)="chooseItem($event)"
+              *ngFor="let set of sets"
+              class="add-workout__header-dropdown-list-item">{{set}}</li>
+        </ul>
       </div>
       <!-- Dropdown -->
 

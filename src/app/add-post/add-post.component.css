@@ -4,13 +4,19 @@
 .categories-list {
   list-style: none;
   padding: 0;
-  display: flex;
-  justify-content: space-around; }
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 8px; }
   .categories-list .categories-list__item {
-    padding: 8px;
+    padding: 7px;
     border-radius: 5px;
-    background: #58aadf;
-    cursor: pointer; }
+    cursor: pointer;
+    transition: all .2s; }
+  .categories-list .category-list__item--selected {
+    background: #58aadf; }
+
+.form-control:focus {
+  background: #fffcd0; }
 
 @media (min-width: 768px) {
   .form {
