@@ -34,10 +34,10 @@
             <img src="https://png.icons8.com/list/win8/45" title="List" width="45" height="45">
           </div>
         </div>
-        <ul [@dropdownState]="setsDropdown" class="add-workout__header-dropdown-list">
+        <ul [@dropdownState]="exercisesDropdown" class="add-workout__header-dropdown-list">
           <li (click)="chooseItem($event)"
-              *ngFor="let set of sets"
-              class="add-workout__header-dropdown-list-item">{{set}}</li>
+              *ngFor="let num of numberOfExercises"
+              class="add-workout__header-dropdown-list-item">{{num}}</li>
         </ul>
       </div>
       <!-- Dropdown -->
@@ -65,76 +65,18 @@
         </div>
         <div class="form-group">
           <label for="user_sets">Sets:</label>
-          <input class="form-control" type="number" id="user_sets">
+          <select (ngModelChange)="generateSetInputsArray($event)" [(ngModel)]="selectedSets" name="exercise_form" class="form-control" type="number" id="user_sets">
+            <option *ngFor="let set of sets" value="{{set}}">{{set}}</option>
+          </select>
         </div>
       </div>
 
       <div class="add-workout__log-body my-2">
 
-        <div class="add-workout__log-weight-set">
+        <div *ngFor="let i of numOfInputs" class="add-workout__log-weight-set">
           <div class="set_number form-group">
             <p>Set</p>
-            <p>1</p>
-          </div>
-          <div class="form-group">
-            <label for="user_weight">Weight</label>
-            <input class="form-control" type="number" id="user_weight">
-          </div>
-          <div class="form-group">
-            <label for="user_reps">Reps</label>
-            <input class="form-control" type="number" id="user_reps">
-          </div>
-        </div>
-
-        <div class="add-workout__log-weight-set">
-          <div class="set_number form-group">
-            <p>Set</p>
-            <p>2</p>
-          </div>
-          <div class="form-group">
-            <label for="user_weight">Weight</label>
-            <input class="form-control" type="number" id="user_weight">
-          </div>
-          <div class="form-group">
-            <label for="user_reps">Reps</label>
-            <input class="form-control" type="number" id="user_reps">
-          </div>
-        </div>
-
-        <div class="add-workout__log-weight-set">
-          <div class="set_number form-group">
-            <p>Set</p>
-            <p>3</p>
-          </div>
-          <div class="form-group">
-            <label for="user_weight">Weight</label>
-            <input class="form-control" type="number" id="user_weight">
-          </div>
-          <div class="form-group">
-            <label for="user_reps">Reps</label>
-            <input class="form-control" type="number" id="user_reps">
-          </div>
-        </div>
-
-        <div class="add-workout__log-weight-set">
-          <div class="set_number form-group">
-            <p>Set</p>
-            <p>4</p>
-          </div>
-          <div class="form-group">
-            <label for="user_weight">Weight</label>
-            <input class="form-control" type="number" id="user_weight">
-          </div>
-          <div class="form-group">
-            <label for="user_reps">Reps</label>
-            <input class="form-control" type="number" id="user_reps">
-          </div>
-        </div>
-
-        <div class="add-workout__log-weight-set">
-          <div class="set_number form-group">
-            <p>Set</p>
-            <p>5</p>
+            <p>{{i}}</p>
           </div>
           <div class="form-group">
             <label for="user_weight">Weight</label>

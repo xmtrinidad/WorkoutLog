@@ -22,18 +22,18 @@
   <form class="form">
     <div class="form-group form__post-title">
       <label for="user_title">Title:</label>
-      <input class="form-control input__post-title" type="text" id="user_title">
+      <input #titleInput class="form-control input__post-title" type="text" id="user_title">
     </div>
     <div class="form-group form__post-date">
       <label for="user_date">Date:</label>
-      <input class="form-control input__post-date" type="date" id="user_date">
+      <input #dateInput class="form-control input__post-date" type="date" id="user_date">
     </div>
     <div class="form-group form__post-desc">
       <label for="user_desc">Description:</label>
-      <textarea class="form-control input__post-desc" type="date" id="user_desc" rows="8"></textarea>
+      <textarea #titleDesc class="form-control input__post-desc" type="date" id="user_desc" rows="8"></textarea>
     </div>
     <div class="text-center form__post-btn">
-      <button routerLink="/add-workout" class="btn btn-primary post-btn col-6" type="button">Add Workout to Post</button>
+      <button routerLink="/add-workout" (click)="getPostInfo(titleInput.value, dateInput.value, titleDesc.value)" class="btn btn-primary post-btn col-6" type="button">Add Workout to Post</button>
     </div>
   </form>
 

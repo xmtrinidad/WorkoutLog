@@ -1,5 +1,6 @@
 export class Post {
   id: number;
+  date: string;
   title: string;
   desc: string;
   categories: string[];

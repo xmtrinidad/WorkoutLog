@@ -28,7 +28,8 @@ and in the section below I will document the resolution.
 |1|How do I create a check pattern with CSS?|Yes|
 |2|How do I use Angular Animations?|Yes|
 |3|How do use Angular routing?||
-|4|How do I go back a page using Angular routing?||
+|4|How do I go back a page using Angular routing?|
+|5|How do I change the number of weight/reps rows in my add-workout component based on the number of sets selected?|
 
 
 ### Answers and Walkthroughs
@@ -114,11 +115,34 @@ The next step is to initialize it in the constructor inside the @Component  like
 ```typescript
 constructor(private location: Location) { }
 ```
-Then you can create a function goBack() and have it use the initialized location variable:
+Then you can create a method goBack() and have it use the initialized location variable:
 ```typescript
 goBack() {
   this.location.back();
 }
 ```
 
-This function can then be applied to the nav element on click inside the component HTML.
+This method can then be applied to the nav element on click inside the component HTML.
+
+#### 5. How do I change the number of weight/reps rows in my add-workout component based on the number of sets selected?
+
+The main directive used for this is the ngModel, which is used for two way binding.  What I wanted to do was create an iterable array based on the number of sets chosen in the add-workout component
+
+Inside the component there are two variables defined as selectedSets, which is set to 1 and numOfInputs array that has one item in it, the number 1 (this is so it matches the default set value and displays at least one weight/reps row).
+
+The selectedSets variable is property bound to ngModel; this is what allows two-way binding.  The default is 1 set, but if the value changes it will flow back to the selectedValue variable.  This is what the element looks like with the binding:
+```html
+<select (ngModelChange)="generateSetInputsArray($event)" [(ngModel)]="selectedSets" name="exercise_form" class="form-control" type="number" id="user_sets">
+```
+However, the selectedSets value is not used to generate the inputs.  There is a method I called generateSetInputArray(data):
+```typescript
+generateSetInputsArray(data) {
+  this.numOfInputs = [];
+  for (let i = 1; i <= data; i++) {
+    this.numOfInputs.push(i);
+  }
+}
+```
+This method iterates over the data passed into it.  This data comes from the ngModelChange event that is bound to the select element where you can choose the number of sets.  When a change occurs to the ngModel (which, again is bound to selectedSets) that change value is emitted to the generateSetInputsArray method ($event parameter).  
+
+Based on this data, the numOfInputs array is created.  The element that creates the weight/reps row uses an *ngFor loop to create the rows based on the number of sets.

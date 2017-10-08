@@ -20,6 +20,7 @@ export const CATEGORIES: Category[] = [
  export const POSTS: Post[] = [
   {
     id: 1,
+    date: '10/07/2017',
     title: 'This is my first workout',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' +
     'Maecenas ac metus vitae leo fringilla finibus quis id nunc. ' +
@@ -170,6 +171,7 @@ export const CATEGORIES: Category[] = [
   },
    {
      id: 2,
+     date: '10/06/2017',
      title: 'Day 2 workout Example',
      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' +
      'Maecenas ac metus vitae leo ',
@@ -200,6 +202,7 @@ export const CATEGORIES: Category[] = [
    },
    {
      id: 3,
+     date: '10/05/2017',
      title: 'Workout 3',
      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' +
      'Maecenas ac metus vitae leo fringilla finibus quis id nunc. ' +

@@ -16,4 +16,12 @@ export class PostService {
       .then(posts => posts.find(post => post.id === id));
   }
 
+  getLastPostId(): number {
+    return POSTS[POSTS.length - 1].id;
+  }
+
+  getLastPost(): Object {
+    return POSTS[POSTS.length - 1];
+  }
+
 }
