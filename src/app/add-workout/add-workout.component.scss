@@ -36,66 +36,6 @@
     }
   }
 
-  .add-workout__progress {
-    position: relative;
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    padding: 0;
-    max-width: 320px;
-    margin: auto;
-    &:before {
-      content: "";
-      position: absolute;
-      top: 17px;
-      width: 100%;
-      height: 4px;
-      background: $progressBar;
-    }
-    .add-workout__progress-number {
-      position: relative;
-      background: $progressBar;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-weight: bold;
-      border-radius: 4px;
-      color: #ebebeb;
-      cursor: pointer;
-    }
-  }
-
-  .add-workout__log {
-    margin: 15px 0;
-    padding: 10px;
-    border-radius: 4px;
-    background: #b9d1dd;
-    font-weight: bold;
-    .add-workout__log-header {
-      display: grid;
-      grid-template-columns: 3fr 1fr;
-      grid-column-gap: 7px;
-
-      border-bottom: 2px solid black;
-    }
-    .add-workout__log-body {
-
-      .add-workout__log-weight-set {
-        display: grid;
-        grid-template-columns: 40px 1fr 1fr;
-        grid-column-gap: 7px;
-        justify-content: center;
-        text-align: center;
-        // Hide 'set' title
-        .set_number p:first-child {
-          visibility: hidden;
-        }
-      }
-
-    }
-  }
 }
 
 @media (min-width: 768px) {

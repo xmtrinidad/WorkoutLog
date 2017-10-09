@@ -12,6 +12,7 @@ import { PostComponent } from './post/post.component';
 import { NavComponent } from './nav/nav.component';
 
 import {PostService} from './post.service';
+import { ExerciseComponent } from './add-workout/exercise/exercise.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {PostService} from './post.service';
     PostsComponent,
     AddWorkoutComponent,
     PostComponent,
-    NavComponent
+    NavComponent,
+    ExerciseComponent
   ],
   imports: [
     BrowserModule,

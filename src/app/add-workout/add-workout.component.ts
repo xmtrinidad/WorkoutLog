@@ -21,15 +21,17 @@ import { CATEGORIES } from '../mock-posts';
 export class AddWorkoutComponent implements OnInit {
   categories = CATEGORIES;
   numberOfExercises = [1, 2, 3, 4, 5];
-  sets = [1, 2, 3, 4, 5];
-  selectedSets = 1;
-  numOfInputs = [1];
+
+  selectedExercises: number;
 
   muscleDropdownText = 'Choose Muscle Group';
   exercisesDropdownText = 'Number of Exercises';
 
   muscleGroupDropdown = 'up';
   exercisesDropdown = 'up';
+
+  // Exercise box
+  exerciseIndex = 1;
 
   constructor() {}
 
@@ -60,6 +62,7 @@ export class AddWorkoutComponent implements OnInit {
   chooseItem(e) {
     const clickedText = e.target.innerText.trim();
     if (Number(clickedText)) {
+      this.selectedExercises = clickedText;
       this.exercisesDropdownText = clickedText;
       this.exercisesDropdown = 'up';
     } else {
@@ -69,15 +72,25 @@ export class AddWorkoutComponent implements OnInit {
   }
 
   /**
-   * clear numOfInputs array and create new one
-   * based on number of sets chosen
-   * @param data - the number of sets
+   * creates new array and pushes numbers
+   * up to the passed in data into the array
+   * @param data - the number passed in to iterate to
+   * @return arr - the new array
    */
-  generateSetInputsArray(data) {
-    this.numOfInputs = [];
+  generateArray(data) {
+    const arr = [];
     for (let i = 1; i <= data; i++) {
-      this.numOfInputs.push(i);
+      arr.push(i);
     }
+    return arr;
+  }
+
+  onNextExercise(e) {
+      this.exerciseIndex++;
+  }
+
+  onPrevExercise(e) {
+    this.exerciseIndex--;
   }
 
 }
