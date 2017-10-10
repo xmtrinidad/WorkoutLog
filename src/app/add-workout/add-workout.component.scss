@@ -2,39 +2,35 @@
 
 .add-workout {
   max-width: 530px;
-  .add-workout__header-dropdowns {
 
-    .add-workout__header-dropdown {
-
-      .add-workout__header-dropdown-top {
-        cursor: pointer;
-        padding: 7px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background: $dropdown;
-        box-shadow: 1px 1px 4px 1px $dropdownShadow;
-      }
-      .add-workout__header-dropdown--text {
+    .add-workout__dropdown-top {
+      cursor: pointer;
+      padding: 7px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: $dropdown;
+      box-shadow: 1px 1px 4px 1px $dropdownShadow;
+    }
+    .add-workout__dropdown--text {
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    .add-workout__dropdown-list {
+      padding: 0;
+      list-style: none;
+      overflow: hidden;
+      .add-workout__dropdown-list-item {
+        border-top: 2px solid lightgray;
+        padding: 15px;
         font-weight: bold;
-        font-size: 1.1rem;
-      }
-      .add-workout__header-dropdown-list {
-        padding: 0;
-        list-style: none;
-        overflow: hidden;
-        .add-workout__header-dropdown-list-item {
-          border-top: 2px solid lightgray;
-          padding: 15px;
-          font-weight: bold;
-          cursor: pointer;
-          &:hover {
-            background: $dropdownHover;
-          }
+        cursor: pointer;
+        &:hover {
+          background: $dropdownHover;
         }
       }
     }
-  }
+
 
 }
 

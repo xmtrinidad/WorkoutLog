@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import { CATEGORIES } from '../mock-posts';
 
 @Component({
   selector: 'app-add-workout',
@@ -19,23 +18,18 @@ import { CATEGORIES } from '../mock-posts';
   ]
 })
 export class AddWorkoutComponent implements OnInit {
-  categories = CATEGORIES;
   numberOfExercises = [1, 2, 3, 4, 5];
-
-  selectedExercises: number;
-
-  muscleDropdownText = 'Choose Muscle Group';
   exercisesDropdownText = 'Number of Exercises';
 
-  muscleGroupDropdown = 'up';
+  // Number to determine number of exercise boxes
+  selectedNumberOfExercises: number;
+  // Animation state
   exercisesDropdown = 'up';
-
-  // Exercise box
-  exerciseIndex = 1;
 
   constructor() {}
 
   ngOnInit() {
+
   }
 
   /**
@@ -43,14 +37,8 @@ export class AddWorkoutComponent implements OnInit {
    * activated based on the dropdown clicked
    * @param e - the text of the dropdown clicked
    */
-  toggleState(e) {
-    const clickedText = e.target.innerText.trim();
-    // Check which drop down is clicked based off the text
-    if ( Number(clickedText) || clickedText === 'Number of Exercises' ) {
-      this.exercisesDropdown = this.exercisesDropdown === 'up' ? 'down' : 'up';
-    } else {
-      this.muscleGroupDropdown = this.muscleGroupDropdown === 'up' ? 'down' : 'up';
-    }
+  toggleState() {
+    this.exercisesDropdown = this.exercisesDropdown === 'up' ? 'down' : 'up';
   }
 
   /**
@@ -61,36 +49,12 @@ export class AddWorkoutComponent implements OnInit {
    */
   chooseItem(e) {
     const clickedText = e.target.innerText.trim();
-    if (Number(clickedText)) {
-      this.selectedExercises = clickedText;
-      this.exercisesDropdownText = clickedText;
-      this.exercisesDropdown = 'up';
-    } else {
-      this.muscleDropdownText = clickedText;
-      this.muscleGroupDropdown = 'up';
-    }
+    this.selectedNumberOfExercises = Number(clickedText);
+    this.exercisesDropdownText = clickedText;
+    // Animate drop down back up
+    this.exercisesDropdown = 'up';
   }
 
-  /**
-   * creates new array and pushes numbers
-   * up to the passed in data into the array
-   * @param data - the number passed in to iterate to
-   * @return arr - the new array
-   */
-  generateArray(data) {
-    const arr = [];
-    for (let i = 1; i <= data; i++) {
-      arr.push(i);
-    }
-    return arr;
-  }
 
-  onNextExercise(e) {
-      this.exerciseIndex++;
-  }
-
-  onPrevExercise(e) {
-    this.exerciseIndex--;
-  }
 
 }

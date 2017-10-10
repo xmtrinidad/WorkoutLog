@@ -11,6 +11,7 @@ import { CATEGORIES } from '../mock-posts';
 export class AddPostComponent implements OnInit {
   categories = CATEGORIES;
   lastPostId: number;
+  addWorkoutClicked = false;
 
   constructor(private postService: PostService) { }
 
@@ -37,6 +38,7 @@ export class AddPostComponent implements OnInit {
       categories: selectedCategories,
       exercises: []
     };
+    this.addWorkoutClicked = true;
     POSTS.push(post);
   }
 

@@ -1,4 +1,4 @@
-<div class="add-post container my-3">
+<div *ngIf="!addWorkoutClicked" class="add-post container my-3">
 
   <div class="add-post__header text-center my-3">
     <div>
@@ -33,8 +33,8 @@
       <textarea #titleDesc class="form-control input__post-desc" type="date" id="user_desc" rows="8"></textarea>
     </div>
     <div class="text-center form__post-btn">
-      <button routerLink="/add-workout" (click)="getPostInfo(titleInput.value, dateInput.value, titleDesc.value)" class="btn btn-primary post-btn col-6" type="button">Add Workout to Post</button>
+      <button (click)="getPostInfo(titleInput.value, dateInput.value, titleDesc.value)" class="btn btn-primary post-btn col-6" type="button">Add Workout to Post</button>
     </div>
   </form>
-
 </div>
+<app-add-workout *ngIf="addWorkoutClicked"></app-add-workout>

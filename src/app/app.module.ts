@@ -12,7 +12,7 @@ import { PostComponent } from './post/post.component';
 import { NavComponent } from './nav/nav.component';
 
 import {PostService} from './post.service';
-import { ExerciseComponent } from './add-workout/exercise/exercise.component';
+import { ExercisesComponent } from './add-workout/exercises/exercises.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,7 @@ import { ExerciseComponent } from './add-workout/exercise/exercise.component';
     AddWorkoutComponent,
     PostComponent,
     NavComponent,
-    ExerciseComponent
+    ExercisesComponent
   ],
   imports: [
     BrowserModule,

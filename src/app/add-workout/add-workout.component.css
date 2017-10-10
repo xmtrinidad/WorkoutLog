@@ -1,6 +1,6 @@
 .add-workout {
   max-width: 530px; }
-  .add-workout .add-workout__header-dropdowns .add-workout__header-dropdown .add-workout__header-dropdown-top {
+  .add-workout .add-workout__dropdown-top {
     cursor: pointer;
     padding: 7px;
     display: flex;
@@ -8,19 +8,19 @@
     align-items: center;
     background: #b9d1dd;
     box-shadow: 1px 1px 4px 1px #d7e5ec; }
-  .add-workout .add-workout__header-dropdowns .add-workout__header-dropdown .add-workout__header-dropdown--text {
+  .add-workout .add-workout__dropdown--text {
     font-weight: bold;
     font-size: 1.1rem; }
-  .add-workout .add-workout__header-dropdowns .add-workout__header-dropdown .add-workout__header-dropdown-list {
+  .add-workout .add-workout__dropdown-list {
     padding: 0;
     list-style: none;
     overflow: hidden; }
-    .add-workout .add-workout__header-dropdowns .add-workout__header-dropdown .add-workout__header-dropdown-list .add-workout__header-dropdown-list-item {
+    .add-workout .add-workout__dropdown-list .add-workout__dropdown-list-item {
       border-top: 2px solid lightgray;
       padding: 15px;
       font-weight: bold;
       cursor: pointer; }
-      .add-workout .add-workout__header-dropdowns .add-workout__header-dropdown .add-workout__header-dropdown-list .add-workout__header-dropdown-list-item:hover {
+      .add-workout .add-workout__dropdown-list .add-workout__dropdown-list-item:hover {
         background: #569ce0; }
 
 /*# sourceMappingURL=add-workout.component.css.map */

@@ -20,7 +20,7 @@ export class PostService {
     return POSTS[POSTS.length - 1].id;
   }
 
-  getLastPost(): Object {
+  getLastPost(): any {
     return POSTS[POSTS.length - 1];
   }
 
