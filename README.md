@@ -30,9 +30,10 @@ and in the section below I will document the resolution.
 |---|--------|----------|
 |1|How do I create a check pattern with CSS?|Yes|
 |2|How do I use Angular Animations?|Yes|
-|3|How do use Angular routing?||
+|3|How do I use Angular routing?|Yes|
 |4|How do I go back a page using Angular routing?|
-|5|How do I change the number of weight/reps rows in my add-workout component based on the number of sets selected?|
+|5|How do I change the number of weight/reps rows in my add-workout component based on the number of sets selected?|Yes|
+|6|What is ngOnChanges and how does it work?|Yes|
 
 
 ### Answers and Walkthroughs
@@ -151,3 +152,36 @@ generateSetInputsArray(data) {
 This method iterates over the data passed into it.  This data comes from the ngModelChange event that is bound to the select element where you can choose the number of sets.  When a change occurs to the ngModel (which, again is bound to selectedSets) that change value is emitted to the generateSetInputsArray method ($event parameter).  
 
 Based on this data, the numOfInputs array is created.  The element that creates the weight/reps row uses an *ngFor loop to create the rows based on the number of sets.
+
+#### 6. What is ngOnChanges and how does it work?
+Within the add-workout component there is a progress bar component that keeps track of the number of exercises to input.  This information is emitted to the parent component, which then passes that information to the exercise component that detects when "submit exercise" is clicked. Back in the progress-bar component there is a <i>makeProgressObject()</i> method:
+```typescript
+makeProgressObject() {
+    this.progress = [{ num: 1, entered: true}];
+    for (let i = 2; i <= this.numberOfExercises; i++) {
+      this.progress.push({ num: i, entered: false});
+    }
+    this.emitProgressBar.emit(this.progress);
+  }
+```
+This method numbers the progress bar boxes and gives it an 'entered' property.  The progress bar numbers are determined by what is chosen in the dropdown from the parent component.  If this number changes, the <i>makeProgressObject</i> needs to be run again.  This is where ngOnChanges() is used.
+```typescript
+ngOnChanges() {
+    this.makeProgressObject();
+  }
+```
+Every time a change occurs in the number of exercises, the makeProgressObject is ran again to make a new progress bar.  Quoting from Angular.io, "Respond when Angular (re)sets data-bound input properties." and this is what occurs in this case.
+
+In order to use ngOnChanges, it needs to be imported into the component that is using it and implemented like so:
+```typescript
+import { ... OnChanges ...} from '@angular/core';
+export class ProgressBarComponent implements OnChanges {
+  ngOnChanges() {
+    this.makeProgressObject();
+  }
+}
+```
+
+
+
+
