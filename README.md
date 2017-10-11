@@ -253,7 +253,8 @@ export class ProgressBarComponent implements OnChanges {
   }
 }
 ```
-
+## Conclusion
+This project is far from 'done', but the basic prototype is finished.  There are many things I'd like to improve.  As always, the design could be better.  At my current skill level, I don't know if there are ways to improve component interaction.  There is a lot of testing that can be performed and things like catching blank inputs could be implemented.  As my Angular and web dev skills continue to improve, I hope to come back to this project and redesign it.
 
 
 
