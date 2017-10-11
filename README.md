@@ -20,6 +20,7 @@ To continue learning Angular, Typescript and various web dev technologies
 |Lifecycle Hooks -- ngOnChanges used to get number of exercises|[Angular.io](https://angular.io/guide/lifecycle-hooks)|
 |NgClass to set classes based on conditions|[Angular.io](https://angular.io/api/common/NgClass)|
 |Get today's date and update input field|[Stack overflow](https://stackoverflow.com/questions/11591854/format-date-to-mm-dd-yyyy-in-javascript)|
+|@ViewChild - Get DOM elements that use the #selector|[Angular.io](https://angular.io/api/core/ViewChild)|
 
 ### Questions
 
@@ -31,7 +32,7 @@ and in the section below I will document the resolution.
 |1|How do I create a check pattern with CSS?|Yes|
 |2|How do I use Angular Animations?|Yes|
 |3|How do I use Angular routing?|Yes|
-|4|How do I go back a page using Angular routing?|
+|4|How do I go back a page using Angular routing?|Yes|
 |5|How do I change the number of weight/reps rows in my add-workout component based on the number of sets selected?|Yes|
 |6|What is ngOnChanges and how does it work?|Yes|
 
@@ -111,6 +112,77 @@ To apply the animation, the element using it needs to be property bound to the t
 
 #### 3. How do I use Angular Routing?
 This is a review for something I did about a month ago.  I don’t remember all the aspects of it so I need to go over it again.
+
+The first step to routing is to make an app.module.ts file.  RouterModule and Routes need to be imported from @angular router.  Here is the shell before defeining routes:
+```typescript
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
+@NgModule({
+  
+})
+
+export class AppRoutingModule {}
+```
+Next, routes need to be defined.  These routes are of type <i>Routes</i> which was imported on the initial set up.
+```typescript
+const routes: Routes = [];
+```
+Inside of this routes array are objects.  Each object has <b>path</b> and <b>component</b> properties.  The path value is the name of the route and the component value is the component associated with that route.  Every path/component pair needs to import the component being used for routing.  You can also define a redirect route in this array of routes, which will redirect an empty path to whatever value the <i>redirectTo</i> property is associated with.  The redirect route also needs a <i>patchMatch</i> property set to 'full' in order to work properly.  Here are the routes defined in this app:
+```typescript
+const routes: Routes = [
+  { path: 'posts', component: PostsComponent },
+  { path: 'add-post', component: AddPostComponent },
+  { path: 'add-workout', component: AddWorkoutComponent },
+  { path: 'posts/:id',  component: PostComponent },
+  { path: '',  redirectTo: '/posts',  pathMatch: 'full' }
+];
+```
+These routes need to be associated with the RouterModule that was imported.  RouterModule has a <i>forRoot() method</i> where you can pass the routes as a paramter.  RouterModule also needs to be included in the <i>imports</i> array inside the @NgModule decorator.  In order to use the RouterModule in other components, it needs to be included in the exports array inside the @NgModule decorator.  This is what the entire app-routing.module.ts file looks like:
+```typescript
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import {PostComponent} from './post/post.component';
+import {AddWorkoutComponent} from './add-workout/add-workout.component';
+import {AddPostComponent} from './add-post/add-post.component';
+import {PostsComponent} from './posts/posts.component';
+
+
+const routes: Routes = [
+  { path: 'posts', component: PostsComponent },
+  { path: 'add-post', component: AddPostComponent },
+  { path: 'add-workout', component: AddWorkoutComponent },
+  { path: 'posts/:id',  component: PostComponent },
+  { path: '',  redirectTo: '/posts',  pathMatch: 'full' }
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [ RouterModule ]
+})
+
+
+export class AppRoutingModule {}
+```
+The final step for defeining routes is to include the app-routing.module.ts file into the app-module by importing it then including it in the <i>imports</i> array inside the @NgModule decorator of the app.module:
+```typescript
+import { AppRoutingModule } from './app-routing.module';
+
+NgModule({
+  ...
+  imports: [
+    ...
+    AppRoutingModule
+  ]
+})
+```
+Once this set up is complete, a <i>routerLink</i> can be used to navigate to the defined routes.  I have several routerLinks in this project.  Here is an example of routing to the add-post component
+```html
+<a routerLink="/posts" href="#" class="nav-menu__list-item--link"><i class="fa fa-list" aria-hidden="true"></i> View Posts</a>
+```
+This routerLink is set to '/posts' which was defined in the app-routing module.  When this element is clicked, it will go to the component associated with this router link name, which is the PostsComponent.
+
+
 
 #### 4. How do I go back a page using Angular Routing?
 To go back a page you first need to import Location from @angular/common for the component that is being affected.
