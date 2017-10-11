@@ -9,6 +9,7 @@ import {PostsComponent} from './posts/posts.component';
 const routes: Routes = [
   { path: 'posts', component: PostsComponent },
   { path: 'add-post', component: AddPostComponent },
+  { path: 'add-workout', component: AddWorkoutComponent },
   { path: 'posts/:id',  component: PostComponent },
   { path: '',  redirectTo: '/posts',  pathMatch: 'full' }
 ];

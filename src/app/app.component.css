@@ -1,7 +1,7 @@
 .nav {
   justify-content: space-between;
   align-items: center;
-  padding: 8px;
+  padding: 10px;
   background: #4278a9;
   color: #ebebeb; }
   .nav .nav__bars {
@@ -12,5 +12,14 @@
     padding: 0;
     flex: 1;
     text-align: center; }
+
+.nav-menu__list {
+  display: none; }
+
+@media (min-width: 768px) {
+  .nav .nav__bars {
+    display: none; }
+  .nav .nav__title {
+    text-align: right; } }
 
 /*# sourceMappingURL=app.component.css.map */

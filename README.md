@@ -17,6 +17,9 @@ To continue learning Angular, Typescript and various web dev technologies
 |Set font-awesome in project using the angular CLI|[Angular CLI Github](https://github.com/angular/angular-cli/blob/master/docs/documentation/stories/include-font-awesome.md)|
 |Checker pattern with CSS|[Stack overflow](https://stackoverflow.com/questions/31184643/how-to-2-column-alternating-div-background)|
 |Angular Animations|[Angular.io](https://angular.io/guide/animations)|
+|Lifecycle Hooks -- ngOnChanges used to get number of exercises|[Angular.io](https://angular.io/guide/lifecycle-hooks)|
+|NgClass to set classes based on conditions|[Angular.io](https://angular.io/api/common/NgClass)|
+|Get today's date and update input field|[Stack overflow](https://stackoverflow.com/questions/11591854/format-date-to-mm-dd-yyyy-in-javascript)|
 
 ### Questions
 
@@ -125,6 +128,8 @@ goBack() {
 This method can then be applied to the nav element on click inside the component HTML.
 
 #### 5. How do I change the number of weight/reps rows in my add-workout component based on the number of sets selected?
+
+### REFACTORED AND NOT APPLIED TO PROJECT -- This documentation will remain here for reference purposes
 
 The main directive used for this is the ngModel, which is used for two way binding.  What I wanted to do was create an iterable array based on the number of sets chosen in the add-workout component
 

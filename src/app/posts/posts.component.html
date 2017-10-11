@@ -1,5 +1,4 @@
 <div class="posts">
-
   <div [routerLink]="['/posts', post.id]" (click)="onSelectPost(post)" *ngFor="let post of posts" class="post">
     <small>{{post.date}}</small>
     <h4 class="post__title">{{post.title}}</h4>
@@ -12,7 +11,7 @@
         <img src="{{categorySrc}}" title="EZ Curl Bar" width="50" height="50">
       </li>
     </ul>
-
   </div>
+  <app-description></app-description>
 
 </div>

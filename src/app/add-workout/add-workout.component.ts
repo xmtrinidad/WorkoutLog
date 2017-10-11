@@ -20,6 +20,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 export class AddWorkoutComponent implements OnInit {
   numberOfExercises = [1, 2, 3, 4, 5];
   exercisesDropdownText = 'Number of Exercises';
+  progress: any[];
 
   // Number to determine number of exercise boxes
   selectedNumberOfExercises: number;
@@ -55,6 +56,8 @@ export class AddWorkoutComponent implements OnInit {
     this.exercisesDropdown = 'up';
   }
 
-
+  getProgress(e) {
+    this.progress = e;
+  }
 
 }

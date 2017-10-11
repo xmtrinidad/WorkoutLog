@@ -13,6 +13,9 @@ import { NavComponent } from './nav/nav.component';
 
 import {PostService} from './post.service';
 import { ExercisesComponent } from './add-workout/exercises/exercises.component';
+import { ProgressBarComponent } from './add-workout/progress-bar/progress-bar.component';
+import { DesktopNavComponent } from './nav/desktop-nav/desktop-nav.component';
+import { DescriptionComponent } from './posts/description/description.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { ExercisesComponent } from './add-workout/exercises/exercises.component'
     AddWorkoutComponent,
     PostComponent,
     NavComponent,
-    ExercisesComponent
+    ExercisesComponent,
+    ProgressBarComponent,
+    DesktopNavComponent,
+    DescriptionComponent
   ],
   imports: [
     BrowserModule,

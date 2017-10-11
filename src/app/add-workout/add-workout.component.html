@@ -1,5 +1,5 @@
 <div class="add-workout container">
-  <h3 class="add-workout__title text-center my-3">Add Workout</h3>
+  <h3  class="add-workout__title text-center my-3">Add Workout</h3>
   <!-- Dropdown -->
   <div class="add-workout__dropdown">
     <div (click)="toggleState()" class="add-workout__dropdown-top">
@@ -15,5 +15,10 @@
           class="add-workout__dropdown-list-item">{{num}}</li>
     </ul>
   </div>
+  <app-progress-bar (emitProgressBar)="getProgress($event)" [numberOfExercises]="selectedNumberOfExercises"></app-progress-bar>
 </div>
-<app-exercises></app-exercises>
+
+<app-exercises
+  [numOfExercises]="selectedNumberOfExercises"
+  [progress]="progress">
+</app-exercises>

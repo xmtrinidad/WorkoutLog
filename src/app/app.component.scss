@@ -1,9 +1,10 @@
 @import "../variables";
 
+
 .nav {
   justify-content: space-between;
   align-items: center;
-  padding: 8px;
+  padding: 10px;
   background: $nav;
   color: $navColor;
   .nav__bars {
@@ -18,4 +19,17 @@
   }
 }
 
+.nav-menu__list {
+  display: none;
+}
 
+@media (min-width: 768px) {
+  .nav {
+    .nav__bars {
+      display: none;
+    }
+    .nav__title {
+      text-align: right;
+    }
+  }
+}

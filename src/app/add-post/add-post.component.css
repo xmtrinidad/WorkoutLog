@@ -1,5 +1,5 @@
-.add-post {
-  max-width: 545px; }
+label {
+  display: none; }
 
 .categories-list {
   list-style: none;
@@ -8,17 +8,34 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 8px; }
   .categories-list .categories-list__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 7px;
     border-radius: 5px;
     cursor: pointer;
+    box-shadow: 1px 1px 3px 2px #e4e4e4;
     transition: all .2s; }
   .categories-list .category-list__item--selected {
     background: #58aadf; }
 
-.form-control:focus {
-  background: #fffcd0; }
+.input__post-title {
+  padding: 9px; }
+
+.post-btn {
+  border: none;
+  padding: 15px;
+  background: #4278a9;
+  max-width: 300px; }
+  .post-btn:hover {
+    background: #3e6695; }
 
 @media (min-width: 768px) {
+  .add-post {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 15px; }
+
   .form {
     display: grid;
     grid-template-areas: "title date" "desc desc" "btn btn";

@@ -1,11 +1,10 @@
-<div *ngIf="!addWorkoutClicked" class="add-post container my-3">
-
-  <div class="add-post__header text-center my-3">
-    <div>
-      <!-- Add Property icon by Icons8 -->
-      <img class="add-workout__header-icon" src="https://png.icons8.com/add-property/ios7/100" title="Add Property" width="100" height="100">
-    </div>
-    <h2 class="add-post__header-text">Add Post</h2>
+<div class="text-center my-3">
+  <!-- Add Property icon by Icons8 -->
+  <img class="add-workout__header-icon" src="https://png.icons8.com/add-property/ios7/100" title="Add Property" width="100" height="100">
+  <h2 class="add-post__header-text">Add Post</h2>
+</div>
+<div class="add-post container my-3">
+  <div class="add-post__header text-center">
     <h5 class="my-3">Choose Category</h5>
     <ul class="categories-list">
       <li
@@ -14,27 +13,33 @@
         *ngFor="let category of categories"
         class="categories-list__item">
         <!-- EZ Curl Bar icon by Icons8 -->
-        <img src="{{category.src}}" title="{{category.muscle}}" width="65" height="65">
+        <img src="{{category.src}}" title="{{category.muscle}}" alt="{{category.muscle}} image" width="65" height="65">
+        <small>{{category.muscle}}</small>
       </li>
     </ul>
   </div>
 
-  <form class="form">
-    <div class="form-group form__post-title">
-      <label for="user_title">Title:</label>
-      <input #titleInput class="form-control input__post-title" type="text" id="user_title">
-    </div>
-    <div class="form-group form__post-date">
-      <label for="user_date">Date:</label>
-      <input #dateInput class="form-control input__post-date" type="date" id="user_date">
-    </div>
-    <div class="form-group form__post-desc">
-      <label for="user_desc">Description:</label>
-      <textarea #titleDesc class="form-control input__post-desc" type="date" id="user_desc" rows="8"></textarea>
-    </div>
-    <div class="text-center form__post-btn">
-      <button (click)="getPostInfo(titleInput.value, dateInput.value, titleDesc.value)" class="btn btn-primary post-btn col-6" type="button">Add Workout to Post</button>
-    </div>
-  </form>
+  <div>
+    <h5 class="text-center my-3">Enter Post Information</h5>
+    <form class="form">
+      <div class="form-group form__post-title">
+        <label for="user_title">Post Title:</label>
+        <input #titleInput placeholder="Post Title" class="form-control input__post-title" type="text" id="user_title">
+      </div>
+      <div class="form-group form__post-date">
+        <label for="user_date">Post Date:</label>
+        <input #dateInput [value]="getToday()" name="input_date" class="form-control input__post-date" type="date" id="user_date">
+      </div>
+      <div class="form-group form__post-desc">
+        <label for="user_desc">Description:</label>
+        <textarea #descInput placeholder="Enter Post Description" class="form-control input__post-desc" type="date" id="user_desc" rows="6"></textarea>
+      </div>
+    </form>
+  </div>
 </div>
-<app-add-workout *ngIf="addWorkoutClicked"></app-add-workout>
+<div class="text-center form__post-btn">
+  <button
+    [routerLink]="['/add-workout']"
+    (click)="getPostInfo(); resetCategories()" class="btn btn-primary post-btn col-6" type="button">Add Workout to Post
+  </button>
+</div>

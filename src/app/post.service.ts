@@ -23,5 +23,14 @@ export class PostService {
   getLastPost(): any {
     return POSTS[POSTS.length - 1];
   }
+  setNextObject(arr) {
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i].entered === false) {
+        arr[i].entered = true;
+        break;
+      }
+    }
+  }
+
 
 }
