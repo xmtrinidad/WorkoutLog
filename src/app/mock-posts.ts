@@ -178,45 +178,13 @@ export const CATEGORIES: Category[] = [
      categories: [legs],
      exercises: [
        {
-         exercise: 'Treadmill',
-         numberOfSets: 3,
-         sets: [
-           {
-             setNumber: 1,
-             weight: 25,
-             reps: 10
-           },
-           {
-             setNumber: 2,
-             weight: 35,
-             reps: 7
-           },
-           {
-             setNumber: 3,
-             weight: 40,
-             reps: 6
-           }
-         ]
-       }
-     ]
-   },
-   {
-     id: 3,
-     date: '10/05/2017',
-     title: 'Workout 3',
-     desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' +
-     'Maecenas ac metus vitae leo fringilla finibus quis id nunc. ' +
-     'Nulla sit amet sapien vitae odio dapibus aliquet',
-     categories: [arms, shoulders],
-     exercises: [
-       {
          exercise: 'Squats',
          numberOfSets: 4,
          sets: [
            {
              setNumber: 1,
              weight: 135,
-             reps: 15
+             reps: 10
            },
            {
              setNumber: 2,
@@ -225,11 +193,11 @@ export const CATEGORIES: Category[] = [
            },
            {
              setNumber: 3,
-             weight: 220,
+             weight: 225,
              reps: 6
            },
            {
-             setNumber: 4,
+             setNumber: 3,
              weight: 225,
              reps: 6
            }
@@ -246,12 +214,12 @@ export const CATEGORIES: Category[] = [
            },
            {
              setNumber: 2,
-             weight: 155,
-             reps: 8
+             weight: 145,
+             reps: 6
            },
            {
              setNumber: 3,
-             weight: 175,
+             weight: 145,
              reps: 6
            }
          ]
@@ -267,49 +235,169 @@ export const CATEGORIES: Category[] = [
            },
            {
              setNumber: 2,
-             weight: 360,
-             reps: 10
+             weight: 270,
+             reps: 12
            },
            {
              setNumber: 3,
-             weight: 450,
-             reps: 6
+             weight: 270,
+             reps: 12
            },
            {
              setNumber: 4,
-             weight: 450,
-             reps: 6
+             weight: 270,
+             reps: 12
            }
          ]
        },
        {
          exercise: 'Leg Ext',
-         numberOfSets: 4,
+         numberOfSets: 5,
          sets: [
            {
              setNumber: 1,
-             weight: 70,
-             reps: 15
+             weight: 85,
+             reps: 10
            },
            {
              setNumber: 2,
-             weight: 85,
-             reps: 12
+             weight: 95,
+             reps: 8
            },
            {
              setNumber: 3,
              weight: 95,
+             reps: 8
+           },
+           {
+             setNumber: 4,
+             weight: 105,
+             reps: 6
+           },
+           {
+             setNumber: 5,
+             weight: 105,
+             reps: 6
+           }
+         ]
+       }
+     ]
+   },
+   {
+     id: 3,
+     date: '10/05/2017',
+     title: 'Workout 3',
+     desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' +
+     'Maecenas ac metus vitae leo fringilla finibus quis id nunc. ' +
+     'Nulla sit amet sapien vitae odio dapibus aliquet',
+     categories: [arms],
+     exercises: [
+       {
+         exercise: 'BB curl',
+         numberOfSets: 4,
+         sets: [
+           {
+             setNumber: 1,
+             weight: 40,
+             reps: 15
+           },
+           {
+             setNumber: 2,
+             weight: 60,
+             reps: 10
+           },
+           {
+             setNumber: 3,
+             weight: 70,
+             reps: 6
+           },
+           {
+             setNumber: 4,
+             weight: 70,
+             reps: 6
+           }
+         ]
+       },
+       {
+         exercise: 'Preacher curl',
+         numberOfSets: 3,
+         sets: [
+           {
+             setNumber: 1,
+             weight: 50,
+             reps: 10
+           },
+           {
+             setNumber: 2,
+             weight: 60,
+             reps: 8
+           },
+           {
+             setNumber: 3,
+             weight: 70,
+             reps: 6
+           }
+         ]
+       },
+       {
+         exercise: 'Triceps Ext',
+         numberOfSets: 5,
+         sets: [
+           {
+             setNumber: 1,
+             weight: 45,
+             reps: 12
+           },
+           {
+             setNumber: 2,
+             weight: 45,
+             reps: 12
+           },
+           {
+             setNumber: 3,
+             weight: 60,
+             reps: 8
+           },
+           {
+             setNumber: 4,
+             weight: 60,
+             reps: 8
+           },
+           {
+             setNumber: 5,
+             weight: 60,
+             reps: 8
+           }
+         ]
+       },
+       {
+         exercise: 'Rope Pulldown',
+         numberOfSets: 5,
+         sets: [
+           {
+             setNumber: 1,
+             weight: 40,
+             reps: 15
+           },
+           {
+             setNumber: 2,
+             weight: 40,
+             reps: 15
+           },
+           {
+             setNumber: 3,
+             weight: 50,
              reps: 10
            },
            {
              setNumber: 4,
-             weight: 95,
+             weight: 50,
              reps: 10
            },
            {
              setNumber: 5,
-             weight: 85,
-             reps: 15
+             weight: 50,
+             reps: 10
            }
          ]
        }
